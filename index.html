@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bienvenido a Nuestra Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1: linear-gradient(135deg,#0f172a 0%,#0b1220 45%,#0b2438 100%);
+      --card-bg: rgba(255,255,255,0.04);
+      --accent: #7c3aed;
+      --glass: rgba(255,255,255,0.06);
+      --text: #e6eef8;
+      --muted: #9fb3d1;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg-1);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+
+    .container{
+      width:100%;
+      max-width:900px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:32px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+      align-items:center;
+      backdrop-filter: blur(6px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; padding:20px}
+    }
+
+    .hero{
+      padding:18px 10px;
+    }
+    .eyebrow{
+      display:inline-block;
+      font-size:13px;
+      font-weight:600;
+      color:var(--muted);
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 12px 0;
+      font-size:34px;
+      line-height:1.02;
+      letter-spacing:-0.02em;
+      font-weight:800;
+      background: linear-gradient(90deg,var(--text), #ffffff);
+      -webkit-background-clip: text;
+      background-clip:text;
+      color:transparent;
+    }
+    p.lead{
+      margin:0 0 22px 0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:70ch;
+    }
+
+    .card{
+      background:var(--card-bg);
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      min-width:220px;
+    }
+    .card h3{margin:0;font-size:18px}
+    .participants{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:6px;
+    }
+    .person{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:8px;
+      border-radius:10px;
+      transition:transform .18s ease, background .18s ease;
+    }
+    .person:hover{transform:translateY(-4px); background:var(--glass)}
+
+    .avatar{
+      width:44px;height:44px;border-radius:10px;
+      display:inline-grid;place-items:center;font-weight:700;
+      background:linear-gradient(135deg,#1e293b,#0f172a);
+      color:var(--text);
+      font-size:15px;
+      flex-shrink:0;
+      box-shadow: 0 8px 18px rgba(2,6,23,0.6);
+    }
+    .name{font-weight:600}
+
+    .accent-strip{
+      height:6px;border-radius:999px;margin-top:8px;background:linear-gradient(90deg,#06b6d4,var(--accent));
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="welcome-title">
+    <section class="hero">
+      <div class="eyebrow">Bienvenida</div>
+      <h1 id="welcome-title">Bienvenido a nuestra web</h1>
+      <p class="lead">Nos alegra tenerte aquí..</p>
+      <div class="accent-strip" aria-hidden="true"></div>
+    </section>
+
+    <aside class="card" aria-label="Participantes">
+      <h3>Participantes</h3>
+      <div class="participants">
+        <div class="person" tabindex="0">
+          <div class="avatar" aria-hidden="true">ML</div>
+          <div class="name">Marcos Lafoz</div>
+        </div>
+
+        <div class="person" tabindex="0">
+          <div class="avatar" aria-hidden="true">AB</div>
+          <div class="name">Andrei Badea</div>
+        </div>
+
+        <div class="person" tabindex="0">
+          <div class="avatar" aria-hidden="true">CA</div>
+          <div class="name">Cristian Aguilar</div>
+        </div>
+
+        <div class="person" tabindex="0">
+          <div class="avatar" aria-hidden="true">MF</div>
+          <div class="name">Marcos Fuente</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
